@@ -1,6 +1,8 @@
 // src/components/Projects.jsx
 import { useState } from "react";
-
+import cinceptionImg from "../images/cinception.png";
+import namasteFoodImg from "../images/namaste-food.png";
+import freeBieImg from "../images/freebie.png";
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
 
@@ -9,7 +11,7 @@ const Projects = () => {
       id: 1,
       title: "Cinception",
       description: "AI-Powered Movie and Series Recommendation Platform",
-      image: "/api/placeholder/600/400",
+      image: cinceptionImg,
       tags: ["React", "AI", "Firebase", "JavaScript"],
       demoLink: "https://cinception.vercel.app/",
       codeLink: "https://github.com/GeekNoob04/cinception",
@@ -18,7 +20,7 @@ const Projects = () => {
       id: 2,
       title: "Namaste Food",
       description: "Food Ordering Platform",
-      image: "/api/placeholder/600/400",
+      image: namasteFoodImg,
       tags: ["React", "JavaScript", "Tailwind CSS", "Swiggy API"],
       demoLink: "https://namastepiggy.vercel.app/",
       codeLink: "https://github.com/GeekNoob04/Namaste-Food",
@@ -27,7 +29,7 @@ const Projects = () => {
       id: 3,
       title: "FreeBie",
       description: "Personalized News Summary Platform",
-      image: "/api/placeholder/600/400",
+      image: freeBieImg,
       tags: ["Python", "NLP", "HTML", "CSS", "JavaScript"],
       demoLink: "https://sitefreebie.netlify.app/",
       codeLink: "https://github.com/GeekNoob04/FreeBie",
