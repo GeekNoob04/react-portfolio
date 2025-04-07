@@ -110,7 +110,7 @@ const Contact = () => {
 
             <div>
               <h4 className="font-bold mb-2">Email</h4>
-              <p className="text-gray-300">youremail@bennett.edu.in</p>
+              <p className="text-gray-300">harshitbudhraja0@gmail.com</p>
             </div>
 
             <div>
@@ -124,7 +124,7 @@ const Contact = () => {
               <h4 className="font-bold mb-2">Follow Me</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/GeekNoob04"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
@@ -143,7 +143,7 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/harshit-budhraja-621a70251/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
@@ -158,7 +158,7 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://twitter.com/yourusername"
+                  href="https://x.com/BudhrajaHarshit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
