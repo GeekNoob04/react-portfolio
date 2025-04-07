@@ -1,5 +1,5 @@
 // src/components/Contact.jsx
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -9,12 +9,18 @@ const Contact = () => {
     message: "",
   });
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
+    phone: "",
     subject: "",
     message: "",
   });
   const formRef = useRef();
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    emailjs.init("DO9l_PdQsidrEtOsB"); // Initialize with your public key
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,30 +29,59 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Basic validation
+    if (!formData.user_name || !formData.user_email || !formData.message) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message:
+          "Please fill in all required fields (Name, Email, and Message).",
+      });
+      return;
+    }
+
     setFormStatus({ submitted: true, success: false, message: "Sending..." });
 
-    // Replace these with your actual EmailJS service details
+    // Prepare the template parameters
+    const templateParams = {
+      from_name: formData.user_name,
+      from_email: formData.user_email,
+      to_name: "Harshit",
+      phone: formData.phone || "Not provided",
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    // Send the email
     emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        formRef.current,
-        "YOUR_PUBLIC_KEY"
+      .send(
+        "service_el7aac4", // Your service ID
+        "template_ygvlqrm", // Your template ID
+        templateParams
       )
       .then(
         (result) => {
+          console.log("SUCCESS!", result.status, result.text);
           setFormStatus({
             submitted: true,
             success: true,
             message: "Message sent successfully!",
           });
-          setFormData({ name: "", email: "", subject: "", message: "" });
+          setFormData({
+            user_name: "",
+            user_email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
         },
         (error) => {
+          console.error("FAILED...", error);
           setFormStatus({
             submitted: true,
             success: false,
-            message: "Failed to send message. Please try again.",
+            message: "Failed to send message. Please try again later.",
           });
         }
       );
@@ -145,28 +180,31 @@ const Contact = () => {
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block mb-1 font-medium">
+                  <label htmlFor="user_name" className="block mb-1 font-medium">
                     Name
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="user_name"
+                    name="user_name"
+                    value={formData.user_name}
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block mb-1 font-medium">
+                  <label
+                    htmlFor="user_email"
+                    className="block mb-1 font-medium"
+                  >
                     Email
                   </label>
                   <input
                     type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                    id="user_email"
+                    name="user_email"
+                    value={formData.user_email}
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
@@ -174,19 +212,34 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="subject" className="block mb-1 font-medium">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                />
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="phone" className="block mb-1 font-medium">
+                    Phone (Optional)
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="subject" className="block mb-1 font-medium">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  />
+                </div>
               </div>
 
               <div>
@@ -207,12 +260,16 @@ const Contact = () => {
               <button
                 type="submit"
                 className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-medium hover:opacity-90 transition-opacity"
-                disabled={formStatus.submitted && !formStatus.message}
+                disabled={
+                  formStatus.submitted && formStatus.message === "Sending..."
+                }
               >
-                Send Message
+                {formStatus.message === "Sending..."
+                  ? "Sending..."
+                  : "Send Message"}
               </button>
 
-              {formStatus.submitted && (
+              {formStatus.submitted && formStatus.message && (
                 <div
                   className={`mt-4 p-3 rounded-lg ${
                     formStatus.success

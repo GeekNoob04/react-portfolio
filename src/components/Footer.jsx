@@ -13,17 +13,14 @@ const Footer = () => {
               href="#"
               className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
             >
-              YourName
+              Harshit Budhraja
             </a>
-            <p className="text-gray-400 mt-2">
-              B.Tech Student at Bennett University
-            </p>
           </div>
 
           <div className="text-center md:text-right">
             <div className="flex justify-center md:justify-end space-x-6 mb-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/GeekNoob04"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -42,7 +39,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/harshit-budhraja-621a70251/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -57,7 +54,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://x.com/BudhrajaHarshit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -72,9 +69,6 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-            <p className="text-gray-400">
-              &copy; {currentYear} YourName. All rights reserved.
-            </p>
           </div>
         </div>
 
