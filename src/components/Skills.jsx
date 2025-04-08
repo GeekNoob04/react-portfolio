@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react";
-
 const Skills = () => {
   const skills = [
     {

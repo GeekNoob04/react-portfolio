@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 const Footer = () => {
-  // For the back to top button - show after scrolling
   const [showTopButton, setShowTopButton] = useState(false);
 
   useEffect(() => {
