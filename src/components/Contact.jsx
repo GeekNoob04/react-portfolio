@@ -1,4 +1,3 @@
-// src/components/Contact.jsx
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -88,31 +87,32 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4">
+    <section id="contact" className="py-12 md:py-20 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
           <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
             Get In Touch
           </span>
         </h2>
 
-        <div className="grid md:grid-cols-5 gap-8">
-          <div className="md:col-span-2 space-y-6">
-            <div className="bg-gray-800/30 p-5 rounded-lg border border-purple-500/30">
-              <h3 className="text-xl font-bold text-purple-400 mb-3">
+        <div className="grid md:grid-cols-5 gap-6 md:gap-8">
+          {/* Contact Information - Stacks on mobile, side by side on larger screens */}
+          <div className="md:col-span-2 space-y-4 md:space-y-6">
+            <div className="bg-gray-800/30 p-4 md:p-5 rounded-lg border border-purple-500/30">
+              <h3 className="text-lg md:text-xl font-bold text-purple-400 mb-2 md:mb-3">
                 Contact Information
               </h3>
-              <p className="text-gray-300 mb-6">
+              <p className="text-gray-300 text-sm md:text-base mb-4 md:mb-6">
                 Have a project in mind or just want to chat? I'm always open to
                 discussing new opportunities and ideas!
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 <div className="flex items-start">
-                  <div className="bg-purple-500/20 p-2 rounded-full mr-3">
+                  <div className="bg-purple-500/20 p-2 rounded-full mr-3 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-purple-400"
+                      className="h-4 w-4 md:h-5 md:w-5 text-purple-400"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -126,10 +126,12 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-white">Email</h4>
+                    <h4 className="font-bold text-white text-sm md:text-base">
+                      Email
+                    </h4>
                     <a
                       href="mailto:harshitbudhraja0@gmail.com"
-                      className="text-purple-300 hover:text-purple-400 transition-colors"
+                      className="text-purple-300 hover:text-purple-400 transition-colors text-sm md:text-base break-all"
                     >
                       harshitbudhraja0@gmail.com
                     </a>
@@ -137,10 +139,10 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-purple-500/20 p-2 rounded-full mr-3">
+                  <div className="bg-purple-500/20 p-2 rounded-full mr-3 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-purple-400"
+                      className="h-4 w-4 md:h-5 md:w-5 text-purple-400"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -160,8 +162,10 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-white">Location</h4>
-                    <p className="text-gray-300">
+                    <h4 className="font-bold text-white text-sm md:text-base">
+                      Location
+                    </h4>
+                    <p className="text-gray-300 text-sm md:text-base">
                       Greater Noida, Uttar Pradesh, India
                     </p>
                   </div>
@@ -170,11 +174,19 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="md:col-span-3 bg-gray-800/40 backdrop-blur-sm p-6 rounded-lg border border-gray-700">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
+          {/* Contact Form - Full width on mobile, 3/5 width on larger screens */}
+          <div className="md:col-span-3 bg-gray-800/40 backdrop-blur-sm p-4 md:p-6 rounded-lg border border-gray-700">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="space-y-3 md:space-y-4"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 <div>
-                  <label htmlFor="user_name" className="block mb-1 font-medium">
+                  <label
+                    htmlFor="user_name"
+                    className="block mb-1 font-medium text-sm md:text-base"
+                  >
                     Name
                   </label>
                   <input
@@ -184,13 +196,13 @@ const Contact = () => {
                     value={formData.user_name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-3 md:px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="user_email"
-                    className="block mb-1 font-medium"
+                    className="block mb-1 font-medium text-sm md:text-base"
                   >
                     Email
                   </label>
@@ -201,14 +213,17 @@ const Contact = () => {
                     value={formData.user_email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-3 md:px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 <div>
-                  <label htmlFor="phone" className="block mb-1 font-medium">
+                  <label
+                    htmlFor="phone"
+                    className="block mb-1 font-medium text-sm md:text-base"
+                  >
                     Phone (Optional)
                   </label>
                   <input
@@ -217,11 +232,14 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-3 md:px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block mb-1 font-medium">
+                  <label
+                    htmlFor="subject"
+                    className="block mb-1 font-medium text-sm md:text-base"
+                  >
                     Subject
                   </label>
                   <input
@@ -231,13 +249,16 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-3 md:px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block mb-1 font-medium">
+                <label
+                  htmlFor="message"
+                  className="block mb-1 font-medium text-sm md:text-base"
+                >
                   Message
                 </label>
                 <textarea
@@ -246,14 +267,14 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows="5"
-                  className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                  rows="4"
+                  className="w-full px-3 md:px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none text-sm md:text-base"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-medium hover:opacity-90 transition-opacity"
+                className="px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-medium hover:opacity-90 transition-opacity text-sm md:text-base w-full md:w-auto"
                 disabled={
                   formStatus.submitted && formStatus.message === "Sending..."
                 }
@@ -265,7 +286,7 @@ const Contact = () => {
 
               {formStatus.submitted && formStatus.message && (
                 <div
-                  className={`mt-4 p-3 rounded-lg ${
+                  className={`mt-3 md:mt-4 p-2 md:p-3 rounded-lg text-sm md:text-base ${
                     formStatus.success
                       ? "bg-green-500/20 border border-green-500 text-green-300"
                       : "bg-red-500/20 border border-red-500 text-red-300"
