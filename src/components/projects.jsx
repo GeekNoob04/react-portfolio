@@ -30,7 +30,7 @@ const Projects = () => {
       title: "FreeBie",
       description: "Personalized News Summary Platform",
       image: freeBieImg,
-      tags: ["Python", "NLP", "HTML", "CSS", "JavaScript"],
+      tags: ["Python", "HTML", "CSS", "JavaScript"],
       demoLink: "https://sitefreebie.netlify.app/",
       codeLink: "https://github.com/GeekNoob04/FreeBie",
     },
