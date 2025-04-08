@@ -106,25 +106,29 @@ const Skills = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes twinkle {
-          0%, 100% { opacity: 0.2; }
-          50% { opacity: 0.8; }
-        }
-        
-        .skill-logo-container {
-          transition: transform 0.3s ease;
-        }
-        
-        .skill-item:hover .skill-logo-container {
-          transform: translateY(-5px);
-        }
-      `}</style>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+          }
+          
+          @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+          }
+          
+          .skill-logo-container {
+            transition: transform 0.3s ease;
+          }
+          
+          .skill-item:hover .skill-logo-container {
+            transform: translateY(-5px);
+          }
+        `,
+        }}
+      />
     </section>
   );
 };
