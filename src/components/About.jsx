@@ -1,69 +1,118 @@
-// src/components/About.jsx
 import { useEffect, useRef } from "react";
 
 const About = () => {
   const sectionRef = useRef(null);
 
   return (
-    <section id="about" className="py-20 px-4">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-            About Me
-          </span>
-        </h2>
+    <section
+      id="about"
+      className="py-24 px-4 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden"
+    >
+      <div className="absolute top-20 left-10 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
 
-        <div className="grid md:grid-cols-3 gap-8 items-center">
-          <div className="md:col-span-1">
-            <div className="relative">
-              <div className="w-full h-64 rounded-lg bg-gradient-to-tr from-purple-500 to-pink-500 transform rotate-3"></div>
-              <div className="absolute inset-0 w-full h-64 overflow-hidden rounded-lg border-2 border-purple-500">
-                <img
-                  src="/api/placeholder/300/300"
-                  alt="Your Name"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+      <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold relative inline-block">
+            <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 bg-clip-text text-transparent">
+              About Me
+            </span>
+            <div className="absolute w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 bottom-0 left-0 transform translate-y-4 rounded-full"></div>
+          </h2>
+        </div>
 
-          <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">
-              Student at Bennett University
-            </h3>
-            <p className="text-gray-300 mb-4">
+        <div className="backdrop-blur-sm p-8 md:p-10 rounded-2xl border border-white/10 bg-gray-900/40 shadow-xl">
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+            Student at Bennett University
+          </h3>
+
+          <div className="space-y-6 text-lg">
+            <p className="text-gray-200 leading-relaxed">
               I'm a passionate third-year B.Tech student specializing in Data
-              Scince, with a strong foundation in both theoretical concepts and
+              Science, with a strong foundation in both theoretical concepts and
               practical applications. I'm particularly enthusiastic about
               front-end web development, where I enjoy bringing user-friendly
               and visually appealing interfaces to life.
             </p>
-            <p className="text-gray-300 mb-6">
+
+            <p className="text-gray-200 leading-relaxed">
               Throughout my academic journey, I've developed a solid grasp of
               data structures and algorithms, which helps me write efficient and
               optimized code. I'm also deeply interested in data science, where
               I love uncovering insights from data and building intelligent
-              solutions. I’m always eager to explore new technologies,
+              solutions. I'm always eager to explore new technologies,
               frameworks, and tools that help me grow and stay ahead in this
               ever-evolving tech landscape.
             </p>
+          </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-bold text-purple-400 mb-2">Education</h4>
-                <ul className="text-gray-300 space-y-1">
-                  <li>B.Tech in Computer Science</li>
-                  <li>Bennett University, 2022-2026</li>
-                </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="bg-gray-800/50 p-6 md:p-8 rounded-xl shadow-lg border-t border-l border-white/5 transition-all duration-300 hover:translate-y-1 hover:shadow-purple-500/20">
+              <div className="flex items-center mb-6">
+                <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-purple-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    />
+                  </svg>
+                </div>
+                <h4 className="font-bold text-purple-400 text-xl">Education</h4>
               </div>
-              <div>
-                <h4 className="font-bold text-purple-400 mb-2">Interests</h4>
-                <ul className="text-gray-300 space-y-1">
-                  <li>Web Development</li>
-                  <li>Data Science</li>
-                  <li>DSA</li>
-                </ul>
+              <ul className="text-gray-300 space-y-3 pl-4">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  B.Tech in Computer Science
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  Bennett University, 2022-2026
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-800/50 p-6 md:p-8 rounded-xl shadow-lg border-t border-l border-white/5 transition-all duration-300 hover:translate-y-1 hover:shadow-blue-500/20">
+              <div className="flex items-center mb-6">
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-blue-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
+                  </svg>
+                </div>
+                <h4 className="font-bold text-blue-400 text-xl">Interests</h4>
               </div>
+              <ul className="text-gray-300 space-y-3 pl-4">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Web Development
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Data Science
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  DSA
+                </li>
+              </ul>
             </div>
           </div>
         </div>

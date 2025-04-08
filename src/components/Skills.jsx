@@ -75,7 +75,7 @@ const Skills = () => {
 
       <div className="container mx-auto max-w-4xl relative z-10">
         <h2 className="text-4xl font-bold mb-20 text-center text-white">
-          Technologies
+          Skills
         </h2>
 
         <div className="flex justify-center">

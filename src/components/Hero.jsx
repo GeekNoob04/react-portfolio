@@ -15,7 +15,7 @@ const Hero = () => {
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/", // Add your actual Instagram URL here
+      url: "https://www.instagram.com/harshitisdelusional/",
       icon: "instagram",
     },
   ];
