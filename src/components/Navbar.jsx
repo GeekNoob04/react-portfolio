@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
@@ -18,34 +17,40 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-gray-900/90 backdrop-blur-md py-2 shadow-lg"
-          : "bg-transparent py-4"
+          : "bg-transparent py-3 sm:py-4"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <a
           href="#"
-          className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+          className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
         >
           Portfolio
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          <a href="#about" className="hover:text-purple-400 transition-colors">
+        <div className="hidden md:flex space-x-4 lg:space-x-8">
+          <a
+            href="#about"
+            className="text-sm lg:text-base hover:text-purple-400 transition-colors"
+          >
             About
           </a>
-          <a href="#skills" className="hover:text-purple-400 transition-colors">
+          <a
+            href="#skills"
+            className="text-sm lg:text-base hover:text-purple-400 transition-colors"
+          >
             Skills
           </a>
           <a
             href="#projects"
-            className="hover:text-purple-400 transition-colors"
+            className="text-sm lg:text-base hover:text-purple-400 transition-colors"
           >
             Projects
           </a>
           <a
             href="#contact"
-            className="hover:text-purple-400 transition-colors"
+            className="text-sm lg:text-base hover:text-purple-400 transition-colors"
           >
             Contact
           </a>
@@ -55,6 +60,7 @@ const Navbar = () => {
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden text-white focus:outline-none"
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? (
             <svg
@@ -96,28 +102,28 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <a
               href="#about"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-purple-400 transition-colors py-2 border-b border-gray-800"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </a>
             <a
               href="#skills"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-purple-400 transition-colors py-2 border-b border-gray-800"
               onClick={() => setIsMenuOpen(false)}
             >
               Skills
             </a>
             <a
               href="#projects"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-purple-400 transition-colors py-2 border-b border-gray-800"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </a>
             <a
               href="#contact"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-purple-400 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact

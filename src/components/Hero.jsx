@@ -129,16 +129,16 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto relative z-10">
-        <div className="flex justify-between items-center max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto gap-8">
           {/* Left side - Text content */}
-          <div className="w-2/3 relative backdrop-blur-md p-6 md:p-8 rounded-xl border border-white/10 bg-black/20 shadow-glow transition-all duration-500 hover:shadow-glow-intense">
+          <div className="w-full md:w-2/3 relative backdrop-blur-md p-5 md:p-8 rounded-xl border border-white/10 bg-black/20 shadow-glow transition-all duration-500 hover:shadow-glow-intense">
             {/* Enhanced geometric accent shapes with animations */}
-            <div className="absolute -top-8 -right-8 w-16 h-16 border-t-2 border-r-2 border-purple-500 rotate-12 opacity-70 animate-pulse-slow"></div>
-            <div className="absolute -bottom-8 -left-8 w-16 h-16 border-b-2 border-l-2 border-blue-500 -rotate-12 opacity-70 animate-pulse-slow delay-150"></div>
+            <div className="absolute -top-8 -right-8 w-12 md:w-16 h-12 md:h-16 border-t-2 border-r-2 border-purple-500 rotate-12 opacity-70 animate-pulse-slow hidden sm:block"></div>
+            <div className="absolute -bottom-8 -left-8 w-12 md:w-16 h-12 md:h-16 border-b-2 border-l-2 border-blue-500 -rotate-12 opacity-70 animate-pulse-slow delay-150 hidden sm:block"></div>
 
             <div className="text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
-                <span className="block text-gray-100 mb-1 animate-fade-in text-base md:text-xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 tracking-tight">
+                <span className="block text-gray-100 mb-1 animate-fade-in text-sm sm:text-base md:text-xl">
                   Hi, I'm
                 </span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-shimmer">
@@ -146,12 +146,12 @@ const Hero = () => {
                 </span>
               </h1>
 
-              <div className="w-24 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 my-4 animate-expand"></div>
+              <div className="w-20 sm:w-24 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 my-3 md:my-4 animate-expand"></div>
 
-              <h2 className="text-lg md:text-xl lg:text-2xl font-medium mb-3 text-gray-200 tracking-wide">
+              <h2 className="text-md sm:text-lg md:text-xl lg:text-2xl font-medium mb-2 md:mb-3 text-gray-200 tracking-wide">
                 B.Tech Student at Bennett University
               </h2>
-              <p className="text-base md:text-lg text-gray-300 mb-6 max-w-md leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 md:mb-6 max-w-md leading-relaxed">
                 Building beautiful and functional web experiences
               </p>
 
@@ -159,13 +159,13 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="#contact"
-                  className="px-6 py-2 bg-blue-600 rounded-md font-medium text-white transition-colors duration-300 hover:bg-blue-700 text-sm md:text-base"
+                  className="px-5 py-2 bg-blue-600 rounded-md font-medium text-white transition-colors duration-300 hover:bg-blue-700 text-sm md:text-base"
                 >
                   Contact Me
                 </a>
                 <a
                   href="#projects"
-                  className="px-6 py-2 bg-transparent border border-blue-500 rounded-md font-medium text-blue-400 hover:bg-blue-600 hover:text-white transition-colors duration-300 text-sm md:text-base"
+                  className="px-5 py-2 bg-transparent border border-blue-500 rounded-md font-medium text-blue-400 hover:bg-blue-600 hover:text-white transition-colors duration-300 text-sm md:text-base"
                 >
                   View Projects
                 </a>
@@ -173,8 +173,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right side - Vertical social links */}
-          <div className="flex flex-col space-y-6 relative backdrop-blur-md p-6 rounded-xl border border-white/10 bg-black/20">
+          {/* Right side - Social links (vertical on desktop, horizontal on mobile) */}
+          <div className="flex flex-row md:flex-col mt-6 md:mt-0 space-y-0 space-x-4 md:space-x-0 md:space-y-6 relative backdrop-blur-md p-4 md:p-6 rounded-xl border border-white/10 bg-black/20">
             {socialLinks.map((link) => (
               <a
                 key={link.name}
@@ -188,7 +188,7 @@ const Hero = () => {
                 <div className="relative p-2 border border-white/30 rounded-md bg-black/30 backdrop-blur-sm group-hover:border-white/50">
                   {link.icon === "github" && (
                     <svg
-                      className="w-6 h-6"
+                      className="w-5 h-5 md:w-6 md:h-6"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -202,7 +202,7 @@ const Hero = () => {
                   )}
                   {link.icon === "linkedin" && (
                     <svg
-                      className="w-6 h-6"
+                      className="w-5 h-5 md:w-6 md:h-6"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -212,7 +212,7 @@ const Hero = () => {
                   )}
                   {link.icon === "x" && (
                     <svg
-                      className="w-6 h-6"
+                      className="w-5 h-5 md:w-6 md:h-6"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -222,7 +222,7 @@ const Hero = () => {
                   )}
                   {link.icon === "instagram" && (
                     <svg
-                      className="w-6 h-6"
+                      className="w-5 h-5 md:w-6 md:h-6"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"

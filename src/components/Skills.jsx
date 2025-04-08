@@ -47,7 +47,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-20 px-4 bg-black relative overflow-hidden"
+      className="py-16 md:py-20 px-3 md:px-4 bg-black relative overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #000000 0%, #090117 100%)",
       }}
@@ -74,12 +74,12 @@ const Skills = () => {
       </div>
 
       <div className="container mx-auto max-w-4xl relative z-10">
-        <h2 className="text-4xl font-bold mb-20 text-center text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 md:mb-20 text-center text-white">
           Skills
         </h2>
 
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-12 gap-y-16">
+          <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 gap-x-4 gap-y-8 sm:gap-x-8 md:gap-x-12 md:gap-y-16">
             {skills.map((skill, index) => (
               <div
                 key={index}
@@ -93,13 +93,16 @@ const Skills = () => {
                   <img
                     src={skill.logo}
                     alt={`${skill.name} logo`}
-                    className="skill-logo w-12 h-12 object-contain"
+                    className="skill-logo w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
                     style={{
                       filter: skill.name === "GitHub" ? "invert(1)" : "none",
                     }}
                     title={skill.name}
                   />
                 </div>
+                <p className="text-white text-xs mt-2 text-center opacity-80">
+                  {skill.name}
+                </p>
               </div>
             ))}
           </div>
@@ -125,6 +128,13 @@ const Skills = () => {
           
           .skill-item:hover .skill-logo-container {
             transform: translateY(-5px);
+          }
+
+          /* Custom XS breakpoint */
+          @media (max-width: 475px) {
+            .xs\\:grid-cols-4 {
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
           }
         `,
         }}
