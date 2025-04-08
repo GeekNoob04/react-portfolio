@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +15,7 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-gray-900/90 backdrop-blur-md py-2 shadow-lg"
+          ? "bg-gray-900/75 backdrop-blur-md py-2 shadow-lg"
           : "bg-transparent py-3 sm:py-4"
       }`}
     >
@@ -98,32 +97,32 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-900/95 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <div className="md:hidden bg-gray-900/95 backdrop-blur-md shadow-lg">
+          <div className="container mx-auto px-4 py-3 flex flex-row overflow-x-auto gap-2 justify-between">
             <a
               href="#about"
-              className="hover:text-purple-400 transition-colors py-2 border-b border-gray-800"
+              className="hover:text-purple-400 whitespace-nowrap transition-colors py-2 px-3 text-center border-r border-gray-800/30 flex-1"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </a>
             <a
               href="#skills"
-              className="hover:text-purple-400 transition-colors py-2 border-b border-gray-800"
+              className="hover:text-purple-400 whitespace-nowrap transition-colors py-2 px-3 text-center border-r border-gray-800/30 flex-1"
               onClick={() => setIsMenuOpen(false)}
             >
               Skills
             </a>
             <a
               href="#projects"
-              className="hover:text-purple-400 transition-colors py-2 border-b border-gray-800"
+              className="hover:text-purple-400 whitespace-nowrap transition-colors py-2 px-3 text-center border-r border-gray-800/30 flex-1"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </a>
             <a
               href="#contact"
-              className="hover:text-purple-400 transition-colors py-2"
+              className="hover:text-purple-400 whitespace-nowrap transition-colors py-2 px-3 text-center flex-1"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
