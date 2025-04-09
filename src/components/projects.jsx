@@ -1,11 +1,8 @@
-// src/components/Projects.jsx
-import { useState } from "react";
 import cinceptionImg from "../images/cinception.png";
 import namasteFoodImg from "../images/namaste-food.png";
 import freeBieImg from "../images/freebie.png";
-const Projects = () => {
-  const [activeProject, setActiveProject] = useState(null);
 
+const Projects = () => {
   const projects = [
     {
       id: 1,
@@ -15,6 +12,7 @@ const Projects = () => {
       tags: ["React", "AI", "Firebase", "JavaScript"],
       demoLink: "https://cinception.vercel.app/",
       codeLink: "https://github.com/GeekNoob04/cinception",
+      year: "2023",
     },
     {
       id: 2,
@@ -24,6 +22,7 @@ const Projects = () => {
       tags: ["React", "JavaScript", "Tailwind CSS", "Swiggy API"],
       demoLink: "https://namastepiggy.vercel.app/",
       codeLink: "https://github.com/GeekNoob04/Namaste-Food",
+      year: "2023",
     },
     {
       id: 3,
@@ -33,90 +32,98 @@ const Projects = () => {
       tags: ["Python", "HTML", "CSS", "JavaScript"],
       demoLink: "https://sitefreebie.netlify.app/",
       codeLink: "https://github.com/GeekNoob04/FreeBie",
+      year: "2022",
     },
   ];
-
-  const openProject = (id) => {
-    setActiveProject(id === activeProject ? null : id);
-  };
 
   return (
     <section id="projects" className="py-12 sm:py-16 md:py-20 px-4">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 md:mb-16 text-center">
           <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
             My Projects
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10">
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`bg-gray-800/40 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:border-purple-500 ${
-                activeProject === project.id
-                  ? "col-span-1 sm:col-span-2 lg:col-span-3"
-                  : ""
-              }`}
+              className="bg-gray-800/40 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/10"
             >
-              <div className="relative overflow-hidden group">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-40 sm:h-44 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-                  <h3 className="text-lg sm:text-xl font-bold">
-                    {project.title}
-                  </h3>
-                </div>
-              </div>
-
-              <div className="p-3 sm:p-4">
-                <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
-                  {project.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs px-2 py-1 bg-purple-800/40 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              <div className="flex flex-col md:flex-row">
+                {/* Thumbnail - adjusting height for better mobile appearance */}
+                <div className="w-full md:w-2/5 h-52 sm:h-56 md:h-auto relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute top-2 right-2 bg-gray-900/70 rounded-full px-3 py-1 text-xs font-semibold">
+                    {project.year}
+                  </div>
                 </div>
 
-                <p
-                  className={`text-gray-300 text-sm sm:text-base ${
-                    activeProject === project.id ? "" : "line-clamp-2"
-                  }`}
-                >
-                  {project.description}
-                </p>
+                {/* Content - improved padding and spacing for mobile */}
+                <div className="w-full md:w-3/5 p-5 sm:p-6 md:p-8 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-white">
+                      {project.title}
+                    </h3>
 
-                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
-                  <button
-                    onClick={() => openProject(project.id)}
-                    className="text-purple-400 hover:text-purple-300 text-sm sm:text-base"
-                  >
-                    {activeProject === project.id ? "View Less" : "View More"}
-                  </button>
+                    <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">
+                      {project.description}
+                    </p>
 
-                  <div className="flex space-x-3 sm:space-x-4 w-full sm:w-auto justify-end">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                      {project.tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="text-xs px-2 sm:px-3 py-0.5 sm:py-1 bg-gray-700 rounded-full font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between sm:justify-start sm:space-x-6 mt-2 sm:mt-0">
                     <a
                       href={project.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs sm:text-sm font-medium px-3 py-1 rounded-full bg-purple-600 hover:bg-purple-700 transition-colors"
+                      className="flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm text-purple-400 hover:text-purple-300 font-medium transition-colors group"
                     >
-                      Demo
+                      <svg
+                        className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-0.5 transition-transform"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                        <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                      </svg>
+                      <span className="whitespace-nowrap">Live Demo</span>
                     </a>
                     <a
                       href={project.codeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs sm:text-sm font-medium px-3 py-1 rounded-full border border-purple-500 hover:bg-purple-500/20 transition-colors"
+                      className="flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm text-purple-400 hover:text-purple-300 font-medium transition-colors group"
                     >
-                      Code
+                      <svg
+                        className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-0.5 transition-transform"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                      <span className="whitespace-nowrap">View Code</span>
                     </a>
                   </div>
                 </div>
