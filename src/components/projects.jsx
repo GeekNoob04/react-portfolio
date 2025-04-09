@@ -12,7 +12,6 @@ const Projects = () => {
       tags: ["React", "AI", "Firebase", "JavaScript"],
       demoLink: "https://cinception.vercel.app/",
       codeLink: "https://github.com/GeekNoob04/cinception",
-      year: "2023",
     },
     {
       id: 2,
@@ -22,7 +21,6 @@ const Projects = () => {
       tags: ["React", "JavaScript", "Tailwind CSS", "Swiggy API"],
       demoLink: "https://namastepiggy.vercel.app/",
       codeLink: "https://github.com/GeekNoob04/Namaste-Food",
-      year: "2023",
     },
     {
       id: 3,
@@ -32,7 +30,6 @@ const Projects = () => {
       tags: ["Python", "HTML", "CSS", "JavaScript"],
       demoLink: "https://sitefreebie.netlify.app/",
       codeLink: "https://github.com/GeekNoob04/FreeBie",
-      year: "2022",
     },
   ];
 
@@ -59,9 +56,6 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
-                  <div className="absolute top-2 right-2 bg-gray-900/70 rounded-full px-3 py-1 text-xs font-semibold">
-                    {project.year}
-                  </div>
                 </div>
 
                 {/* Content - improved padding and spacing for mobile */}
