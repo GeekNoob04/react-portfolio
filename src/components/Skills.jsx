@@ -96,6 +96,7 @@ const Skills = () => {
                       filter: skill.name === "GitHub" ? "invert(1)" : "none",
                     }}
                     title={skill.name}
+                    draggable="false"
                   />
                 </div>
                 <p className="text-white text-xs mt-2 text-center opacity-80">
@@ -131,7 +132,7 @@ const Skills = () => {
           /* Custom XS breakpoint */
           @media (max-width: 475px) {
             .xs\\:grid-cols-4 {
-              grid-template-columns: repeat(3, minmax(0, 1fr));
+              grid-template-columns: repeat(5, minmax(0, 1fr));
             }
           }
         `,
