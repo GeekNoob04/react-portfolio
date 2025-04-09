@@ -96,6 +96,10 @@ const About = () => {
               <ul className="text-gray-300 space-y-2 md:space-y-3 pl-3 md:pl-4 text-sm md:text-base">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 md:mr-3"></span>
+                  Schooling at Nehru World School
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 md:mr-3"></span>
                   B.Tech in Computer Science
                 </li>
                 <li className="flex items-center">
