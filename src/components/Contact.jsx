@@ -60,8 +60,7 @@ const Contact = () => {
         templateParams
       )
       .then(
-        (result) => {
-          console.log("SUCCESS!", result.status, result.text);
+        () => {
           setFormStatus({
             submitted: true,
             success: true,
