@@ -31,18 +31,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 to-black">
-      {/* Dot Pattern Background */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
-          backgroundSize: "20px 20px",
-        }}
-      ></div>
-
+    <footer className="relative bg-gradient-to-t from-gray-900 to-black">
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-12 pb-6 sm:pt-16 sm:pb-8">
+      <div className="relative container mx-auto px-4 sm:px-6 pt-12 pb-6 sm:pt-16 sm:pb-8">
         {/* Top section */}
         <div className="flex flex-col lg:flex-row justify-between items-center border-b border-gray-800 pb-8">
           {/* Logo */}
