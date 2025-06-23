@@ -27,7 +27,7 @@ A modern, responsive portfolio website built with React and Vite, showcasing pro
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/GeekNoob04/react-portfolio
    cd portfolio
    ```
 
@@ -70,14 +70,6 @@ A modern, responsive portfolio website built with React and Vite, showcasing pro
 └── vite.config.js
 ```
 
-## 📸 Screenshots
-
-[Image description: A screenshot of the portfolio's hero section with a gradient background and animated text.]
-
-[Image description: A screenshot of the projects section showcasing different projects with hover effects.]
-
-[Image description: A screenshot of the contact form with a clean and minimal design.]
-
 ## 🤝 Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, please fork the repository and submit a pull request.
@@ -87,14 +79,6 @@ Contributions are welcome! If you have any suggestions or improvements, please f
 3. Commit changes: `git commit -m "Add your feature"`
 4. Push to the branch: `git push origin feature/your-feature-name`
 5. Open a Pull Request.
-
-## 📝 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## 📬 Contact
-
-For questions or suggestions, feel free to reach out to Harshit at [your.email@example.com](mailto:your.email@example.com).
 
 ## 💖 Thanks
 
