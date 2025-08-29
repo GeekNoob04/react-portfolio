@@ -176,7 +176,7 @@ const Hero = () => {
               {/* Simplified CTA buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://drive.google.com/file/d/1NHEYsXvkS49xNscykRWXZqvJrL_LjZZ9/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1EogSfw2qNjhSe4Z5J70sx6V2uVvPIHj1/view?usp=sharing"
                   className="px-5 py-2 bg-blue-600 rounded-md font-medium text-white transition-colors duration-300 hover:bg-blue-700 text-sm md:text-base"
                   download="Harshit_Budhraja_CV.pdf"
                   target="_blank"
