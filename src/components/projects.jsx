@@ -1,11 +1,20 @@
 import cinceptionImg from "../images/cinception.png";
-import freeBieImg from "../images/freebie.png";
+import leetmentorImg from "../images/leetmentor.png";
 import mementoImg from "../images/memento.png";
 
 const Projects = () => {
     const projects = [
         {
             id: 1,
+            title: "LeetMentor AI",
+            description: "Intelligent LeetCode Insights Platform",
+            image: leetmentorImg,
+            tags: ["Next.js", "PostgreSQL", "Recharts", "Gemini API"],
+            demoLink: "https://leetmentor-ai.vercel.app/",
+            codeLink: "https://github.com/GeekNoob04/leetcode-ai-mentor",
+        },
+        {
+            id: 2,
             title: "Cinception",
             description: "AI-Powered Movie and Series Recommendation Platform",
             image: cinceptionImg,
@@ -14,22 +23,13 @@ const Projects = () => {
             codeLink: "https://github.com/GeekNoob04/cinception",
         },
         {
-            id: 2,
+            id: 3,
             title: "Memento",
             description: "Daily Journal App",
             image: mementoImg,
             tags: ["Next.js", "TypeScript", "NextAuth", "Prisma + SQL"],
             demoLink: "https://memento-journal.vercel.app/",
             codeLink: "https://github.com/GeekNoob04/daily-journal",
-        },
-        {
-            id: 3,
-            title: "FreeBie",
-            description: "Personalized News Summary Platform",
-            image: freeBieImg,
-            tags: ["Python", "HTML", "CSS", "JavaScript"],
-            demoLink: "https://sitefreebie.netlify.app/",
-            codeLink: "https://github.com/GeekNoob04/FreeBie",
         },
     ];
 
