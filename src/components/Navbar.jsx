@@ -42,6 +42,12 @@ const Navbar = () => {
             Skills
           </a>
           <a
+            href="#experience"
+            className="text-sm lg:text-base hover:text-purple-400 transition-colors"
+          >
+            Experience
+          </a>
+          <a
             href="#projects"
             className="text-sm lg:text-base hover:text-purple-400 transition-colors"
           >
@@ -112,6 +118,13 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Skills
+            </a>
+            <a
+              href="#experience"
+              className="hover:text-purple-400 whitespace-nowrap transition-colors py-2 px-3 text-center border-r border-gray-800/30 flex-1"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Experience
             </a>
             <a
               href="#projects"
